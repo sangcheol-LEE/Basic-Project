@@ -49,7 +49,7 @@
 ## 기본 형태
 
 - 태그는 각자의 의미를 가지고 있으며 다음과 같은 형태를 가집니다.
-- <TAG></TAG>, <TAG>something</TAG>
+- "<TAG></TAG>, <TAG>something</TAG>"
 
 ## 속성(Attributes)과 값 (value)
 
@@ -58,13 +58,13 @@
 
 ## 부모와 자식요소
 
-- <parents> <Child></Child> <parents>
+- "<parents> <Child></Child> <parents>"
 
 ## 빈 태그
 
 - HTML에는 닫히는 개념이 없는 태그들이 있다.
-- <TAG />
-- ex) <img />
+- "<TAG />"
+- "ex) <img />"
 - html5 에서는 위 2가지 형태를 다 사용할 수 있는데 개발하는 환경에 따라 사용할 수 있는데 쓸꺼면 전부 다쓰고 안쓸꺼면 아예 쓰지말자
 - 혼용만 하지말자 !
 
@@ -162,3 +162,35 @@
 
 - font-color - 요소의 글자 색상
 - background-color - 요소의 배경 색상
+
+# CSS
+
+## 작업 전 초기화를 해줘야 한다.
+
+## width 와 height의 기본 값은 auto로 되어있다.
+
+- auto의 의미는 가로 사이즈는 100%로 꽉 차게 되고, height는 자식요소로 있는 요소들의 길이로 자동으로 늘어난다.
+
+## margin auto
+
+- margin은 요소의 바깥여백인데 부모의 width 값 기준으로 화면의 중앙으로 오게 된다.
+
+## 블록요소와 인라인 요소
+
+### 블록 div, h1, p 등
+
+- 사용 가능한 최대 가로 너비를 사용
+- 크기를 지정할 수 있다.
+- width값이 100%로 시작, 높이는 없는 상태로 시작 (height: 0)
+- 수직으로 쌓임
+- margin,padding 위,아래,좌,우 사용 가능
+- 레이아웃을 위한 용도
+
+### 인라인span, img 등
+
+- 필요한 만큼의 너비만 사용
+- 크기를 지정할 수 없다.
+- width: 0, height: 0 으로 시작
+- 수평으로 쌓임
+- margin,padding 위,아래 사용 불가
+- 텍스트를 다루는 용도
