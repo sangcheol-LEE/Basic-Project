@@ -194,3 +194,8 @@
 - 수평으로 쌓임
 - margin,padding 위,아래 사용 불가
 - 텍스트를 다루는 용도
+
+## form
+
+- autocomplete - 자동완성 기능 사용할지 말지 값 : on / off
+- get 방식 : 정보들을 전송하려고 하는 url에 담아서 보내는 방식
