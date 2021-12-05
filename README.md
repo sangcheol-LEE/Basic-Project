@@ -212,4 +212,124 @@
 ## css Reset
 
 - 왜 css를 초기화 해야하는가 ?
-- 브라우저가 가지고 있는 기본 css를 초기화 하여 크로스 브라우징을 해결 할 수 있도록 한다.
+- 브라우저가 가지고 있는 기본 css를 초기화 하여 크로스 브라우징을 해결 할 수 있도록 하기위함
+
+## css 선택자
+
+- 일치 선택자 span.className {} 둘 다 만족해야만 선택됩니다.
+- 자식 선택자 ul > .className {}
+- 후손(자손) 하위 선택자 div .className {}
+- 인접 형제 선택자 .className + li {}
+- 일반 형제 선택자 .className ~ li {}
+
+## 가상 클래스 선택자
+
+- :(콜론) 1개
+- hover : 요소에 마우스 포인터가 올라가 있는 동안에만 동작 .className:hover {}
+- active : 요소를 마우스로 클릭하는 동안에만 동작 .clasName:active {}
+- focus : 요소에 포커스 된 동안에만 선택 (대화형 콘텐츠 input, img, tabindex 에 사용)
+  .className:focus
+
+## 가상 요소 선택자
+
+- 가상의 요소에는 이미지도 넣을 수 있다.
+- before : 요소 내부의 앞에 내용 (contant)을 삽입 (가상의 요소로 삽입)
+- :: (콜론 2개) .className::before {}
+- 예) div::before
+- "<div> <가상요소 들어올 위치> 내용 </div>"
+
+- ul li ::before {
+  content : '숫자';
+  font-weight: bold;
+  }
+- 어떤 특정한 요소에 특정한 값을 넣고싶을 때 사용합니다.
+
+- after : 요소 내부의 뒤에 내용을 삽입
+- ul li ::after {
+  content : url("이미지주소");
+  }
+
+## CSS 상속
+
+- 상속되는 속성들
+
+* font
+
+- font-size
+- font-weight
+- font-style
+- line-height
+- font-family
+
+* color
+* text-align
+* text-indent
+* text-decoration
+* letter-spacing
+* opacity ...
+
+### 강제 상속 (필요에 의해서)
+
+- 부모요소에 position : absolute 를 주면 상속되지 않는데 자식 요소에 position : inherit을 주면 부모요소의 값을 강제로 상속받아 사용 할 수 있다.
+
+## 우선순위
+
+- 같은 요소가 여러 선언의 대상이 될 경우, 어떤 선언의 css속성을 우선 적용할지 결정하는 방법
+
+1. 명시도 점수가 높은 선언이 우선 명시도
+2. 점수가 같은 경우, 가장 마지막에 해석(늦게 작성한) 되는 선언이 우선 (선언순서)
+3. 명시도는 "상속" 규칙보다도 우선
+4. !important 가 적용된 선언방식이 다른 모든 방식보다 우선(중요도)
+
+즉,
+
+1. !important
+2. 인라인 선언방식
+3. ID 선택자
+4. class 선택자
+5. 전체 선택자
+6. 상속 - 상속 받은 속성은 항상 우선하지 않음
+
+## 단위
+
+- % : 단위는 부모요소의 사이즈의 상대적으로 반응
+- em : 단위는 font 크기에 영향을 받는다.
+- rem : html에 지정된 font size만을 영향받음
+
+## 박스 모델
+
+- width : 요소의 가로 너비를 지정
+
+* auto - 브라우저가 너비를 계산 (기본값)
+* 단위 - px, em , cm 등 단위로 지정
+
+- max-width : 요소의 최대 가로 너비를 지정
+
+* 단위 px, em, % 등 기본값 none
+
+- min-width : 요소의 최소 가로 너비
+
+* 단위 px, em, % 등 기본값 0
+
+- max-height : 요소의 최대 세로 너비를 지정
+
+* 단위 px, em, % 등 기본값 none
+
+- min-height : 요소의 최소 세로 너비
+
+* 단위 px, em, % 등 기본값 0
+
+## display
+
+- 요소의 박스 타입(유형)을 설정
+  블록 - div 등
+  인라인 - span 등
+  인라인블록 - input 등 기본적으로 수평으로 쌓이고 가로세로값을 가질수 있고 마진패딩 전부 사용가능
+
+## overflow
+
+- 요소의 크기 이상으로 내용(자식요소)이 넘쳤을 때, 내용의 보여짐을 제어
+
+* visible : 넘친 부분을 자르지 않고 그대로 보여줌 (기본값)
+* hidden : 넘친 부분을 잘라내고, 스크롤바를 이용하여 볼 수 있도록 함
+* auto : 넘친 부분이 있는 경우만 잘라내고 스크롤 바를 이용하여 볼 수 있도록 함
